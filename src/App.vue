@@ -1,43 +1,45 @@
-// This content links with 'contentForLoop' file
-
 <template>
-  <!-- all HTML content -->
-  <!-- other components also are used in template area-->
-  <ContentVue v-for="content in contents_array" :content_obj="content" />
+  <LandingVue />
+
+  <section class="results-section">
+    <VehicleVue v-for='vehicle in vehicles_array'  :vehicle_obj='vehicle' />
+  </section>
+
 </template>
+
 <style scoped>
-  /* all CSS classes are defined here */
+
 </style>
+
 <script setup>
-  // all imports for other components are done in setup
-  // Prop declarations also are done in script setup
-  import ContentVue from './components/Content.vue'
+  import VehicleVue from './components/15th Feb_e2(arrays)_content.vue'
 </script>
+
 <script>
 export default {
   data(){
-    return{ // data Start
-      contents_array:[
+    return{
+      vehicles_array : [
         {
-          title:'title one',
-          content:'content one',
-          content_revealed:true,
-          approved:true
+          type : 'Motorbike',
+          min_people : 1,
+          max_people : 1,
+          min_day : 1,
+          max_day : 5,
+          price_per_day : 109,
+          gas_per_100km : 3.7
         },
         {
-          title:'title two',
-          content:'content two',
-          content_revealed:true,
-          approved:false
-        },
-        {
-          title:'title three',
-          content:'content three',
-          content_revealed:false,
-          approved:true
+          type : 'Small Car',
+          min_people : 1,
+          max_people : 2,
+          min_day : 1,
+          max_day : 5,
+          price_per_day : 129,
+          gas_per_100km : 8.5
         }
       ]
-    } // data End
+    }
   }
 }
 </script>
