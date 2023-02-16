@@ -1,45 +1,43 @@
-<template>
-  <LandingVue />
-
-  <section class="results-section">
-    <VehicleVue v-for='vehicle in vehicles_array'  :vehicle_obj='vehicle' />
-  </section>
-
-</template>
-
-<style scoped>
-
-</style>
-
 <script setup>
-  import VehicleVue from './components/15th Feb_e2(arrays)_content.vue'
+  import PersonVue from './components/Person.vue'
 </script>
+
+<template>
+  <PersonVue v-for='person_item in my_data_array'
+  :person_obj='person_item' />
+</template>
 
 <script>
 export default {
-  data(){
+  data(){ 
     return{
-      vehicles_array : [
+      my_data_array:[
         {
-          type : 'Motorbike',
-          min_people : 1,
-          max_people : 1,
-          min_day : 1,
-          max_day : 5,
-          price_per_day : 109,
-          gas_per_100km : 3.7
+          fname : 'Utku',
+          lname : 'Yalcin',
+          present : false
         },
         {
-          type : 'Small Car',
-          min_people : 1,
-          max_people : 2,
-          min_day : 1,
-          max_day : 5,
-          price_per_day : 129,
-          gas_per_100km : 8.5
-        }
+          fname : 'Tin',
+          lname : 'Baltazar',
+          present : false
+        },
+        {
+          fname : 'Katie',
+          lname : 'Pragg',
+          present : false
+        },
+        {
+          fname : 'Merlin',
+          lname : 'Stemmer',
+          present : false
+        },
       ]
     }
   }
 }
 </script>
+
+<style>
+
+</style>
