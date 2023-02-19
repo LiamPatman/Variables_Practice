@@ -1,0 +1,27 @@
+[
+    {
+      "fname" : "Utku",
+      "lname" : "Yalcin",
+      "present" : false
+    },
+    {
+      "fname" : "Tin",
+      "lname" : "Baltazar",
+      "present" : false
+    },
+    {
+      "fname" : "Katie",
+      "lname" : "Pragg",
+      "present" : false
+    },
+    {
+      "fname" : "Merlin",
+      "lname" : "Stemmer",
+      "present" : false
+    },
+    {
+      "fname" : "Shaye",
+      "lname" : "Lock",
+      "present" : false
+    }
+  ]

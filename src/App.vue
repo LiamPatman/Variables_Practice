@@ -1,43 +1,29 @@
-<script setup>
-  import PersonVue from './components/Person.vue'
-</script>
-
 <template>
-  <PersonVue v-for='person_item in my_data_array'
-  :person_obj='person_item' />
+<!-- <span @click="data_fetch">LOAD</span> -->
+<h3 v-for='news_article in my_data_array'>{{news_article.title}}</h3>
 </template>
-
 <script>
 export default {
-  data(){ 
-    return{
-      my_data_array:[
-        {
-          fname : 'Utku',
-          lname : 'Yalcin',
-          present : false
-        },
-        {
-          fname : 'Tin',
-          lname : 'Baltazar',
-          present : false
-        },
-        {
-          fname : 'Katie',
-          lname : 'Pragg',
-          present : false
-        },
-        {
-          fname : 'Merlin',
-          lname : 'Stemmer',
-          present : false
-        },
-      ]
+  data(){ // data itself starts
+    return{ // data variables starts
+      my_data_array:[]
+    } // data variables end
+  }, // data itself ends
+  methods:{ // funtions are written in methods
+    async data_fetch(){
+      const response = await fetch("https://newsapi.org/v2/everything?q=tesla&apiKey=ffd711aad23843739f3a3c42ff9b8f7d");
+      const received_data = await response.json();
+      // at this point our data is available under received_data variable
+      
+      this.my_data_array = received_data.articles;
+
+      console.log( this.my_data_array[0] );
     }
-  }
+  }, // methods end
+  created(){ // created() is where initial code runs once
+    this.data_fetch();
+  } // end of created
 }
 </script>
-
 <style>
-
 </style>
